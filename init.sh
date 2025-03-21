@@ -2,7 +2,8 @@
 
 REPO_NAME=$(basename "$(git rev-parse --show-toplevel 2>/dev/null || pwd)")
 MOD_FILE="go.mod"
-OLD_MODULE_PATH="github.com/skolldire/go-batch-app"
+PKG_NAME=$(basename $(pwd))
+OLD_MODULE_PATH="github.com/skolldire/$PKG_NAME"
 NEW_MODULE_PATH="github.com/skolldire/$REPO_NAME"
 
 if [ -f "$MOD_FILE" ]; then
