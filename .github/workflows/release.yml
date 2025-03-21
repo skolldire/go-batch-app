@@ -37,7 +37,7 @@ jobs:
 
       - name: Build Binary
         run: |
-          go build -o $PROJECT_NAME ./cmd/api
+          go build -o $PROJECT_NAME ./cmd/cli
           tar -czvf $PROJECT_NAME_${{ github.ref_name }}.tar.gz $PROJECT_NAME
 
       - name: Create Release

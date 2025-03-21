@@ -1,1 +1,1 @@
-# go-web-app
+# go-batch-app

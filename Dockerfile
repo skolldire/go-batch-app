@@ -1,4 +1,4 @@
-ARG APP_NAME=go-web-app
+ARG APP_NAME=go-batch-app
 
 FROM golang:1.24-alpine AS builder
 
@@ -11,7 +11,7 @@ RUN go mod download
 
 COPY . .
 
-RUN GOOS=linux GOARCH=amd64 go build -o $APP_NAME ./cmd/api
+RUN GOOS=linux GOARCH=amd64 go build -o $APP_NAME ./cmd/cli
 
 RUN ls -la /app/$APP_NAME
 
@@ -25,7 +25,7 @@ RUN chmod +x /$APP_NAME
 
 COPY --from=builder /app/config /app/config
 
-ENV CONF_DIR=/app/kit/config
+ENV CONF_DIR=/app/config
 ENV SCOPE=stage
 
 RUN chmod -R 755 /app/config
