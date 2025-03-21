@@ -1,0 +1,19 @@
+info:
+  contact: {}
+paths:
+  /ping:
+    get:
+      consumes:
+      - application/json
+      description: get string by string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Validate that the application is working
+      tags:
+      - pong
+swagger: "2.0"

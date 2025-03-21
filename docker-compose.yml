@@ -1,0 +1,17 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_NAME: ${APP_NAME}
+    image: ${APP_NAME}:latest
+    container_name: ${APP_NAME}
+    networks:
+      - localnet
+    ports:
+      - "8080:8080"
+
+networks:
+  localnet:
+    driver: bridge
