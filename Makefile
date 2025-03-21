@@ -8,7 +8,7 @@ init:
 	@chmod +x init.sh && ./init.sh
 
 build:
-	go build -o $(PROJECT_NAME) ./cmd/$(PROJECT_NAME)/main.go
+	go build -o $(PROJECT_NAME) ./cmd/api/main.go
 
 clean:
 	rm -f $(PROJECT_NAME)
@@ -17,4 +17,4 @@ test:
 	go test ./... -v
 
 run:
-	go run ./cmd/$(PROJECT_NAME)/main.go
+	go run ./cmd/api/main.go
